@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <div id="DivFormDatos">
+        <h1>Form Datos</h1>
+        <p>Filtrar por: <select name="cboLista" size="1" id="cbo">
+                <option value="1" > Todos </option>
+                <option value="2" > Terrestre </option>
+                <option value="3" > Aereos </option>
+
+            </select></p>
+        <p>Calcular velocidad promedio:<input type="text" id="txtVelocidadPromedio" readonly /> <button
+                onclick="CalcularVelocidad()">Calcular</button></p>
+        <p>Mostrar columnas:</p>
+        <p id="losCheckBoxes">
+            <input type="checkbox" id="checkboxID" checked onclick="CheckBoxes('checkboxID')" />ID
+            <input type="checkbox" id="checkBoxNombre" checked onclick="CheckBoxes('checkBoxNombre')" />Modelo
+            <input type="checkbox" id="checkBoxApellido" checked onclick="CheckBoxes('checkBoxApellido')" />Año fab
+            <input type="checkbox" id="checkBoxEdad" checked onclick="CheckBoxes('checkBoxEdad')" />Vel Max
+            <input type="checkbox" id="checkBoxEquipo" checked onclick="CheckBoxes('checkBoxEquipo')" />Alt Max
+            <input type="checkbox" id="checkBoxPosision" checked onclick="CheckBoxes('checkBoxPosision')" />Autonomia
+            <input type="checkbox" id="checkBoxCantGoles" checked onclick="CheckBoxes('checkBoxCantGoles')" />CantPue
+            <input type="checkbox" id="checkBoxTitulo" checked onclick="CheckBoxes('checkBoxTitulo')" />CantRue
+        </p>
+
+        <table id="tblDatos" border="2" class="tblDatosClass">
+            <tr id="primerTR">
+                <th id ="IdTitulo" onclick="OrdernarColuma(id)" >ID</th>
+                <th id="ModeloTitulo"onclick="OrdernarColuma(id)">Modelo</th>
+                <th id="AnoFabTitulo"onclick="OrdernarColuma(id)">Año fab</th>
+                <th id="VelMaxTitulo"onclick="OrdernarColuma(id)">Vel Max</th>
+                <th id="AltMaxTitulo"onclick="OrdernarColuma(id)">Alt Max</th>
+                <th id="AutonomiaTitulo"onclick="OrdernarColuma(id)">Autonomia</th>
+                <th id="CantPuerTitulo"onclick="OrdernarColuma(id)">CantPue</th>
+                <th id="CantRueTitulo"onclick="OrdernarColuma(id)">CantRue</th>
+            </tr>
+        </table>
+    </div>
+    <div class="formularioOculto">
+        <Form>
+            <div class="locura"><label class="label_formulario">ID</label>
+                <input type="text" id="txtId" readonly>
+                <label class="label_formulario">Modelo:</label>
+                <input type="text" id="txtModelo">
+                <label class="label_formulario">Año Fabricado:</label>
+                <input type="text" id="txtAnoFabr">
+                <label class="label_formulario">VelMax:</label>
+                <input type="text" id="txtVelMax">
+                <select id="select_tipo" onclick="OcultarTerrestreOAereo()">
+                    <option value="terrestre">Terrestre</option>
+                    <option value="aereo">Aereo</option>
+                </select>
+            </div>
+
+            <div class="terrestre">
+                <label class="label_formulario">Cantidad Puertas:</label>
+                <input type="text" id="txtcantPuertas">
+                <label class="label_formulario">Cantidad Ruedas</label>
+                <input type="text" id="txtcantRuedas">
+            </div>
+
+            <div class="aereo">
+                <label class="label_formulario">Alt Max</label>
+                <input type="text" id="txtAltMax">
+                <label class="label_formulario">Autonomia:</label>
+                <input type="text" id="txtAutonomia">
+            </div>
+        </Form>
+        
+    </div>
+    
+        <button class="buttonsito" onclick="AltaDePersonas()">Alta</button>
+
+        <div class="ModificarYBorrarBtn" >
+        <button id="btnModificar" onclick="Modificar()">Modificar</button>
+        <button id="btnBorrar"onclick="Borrar()">Borrar</button>
+        <button id="Salir" onclick="MostrarForm2()">Salir</button>
+    </div>
+
+    <div id="botonAlta">
+        <button class="idBtnAlta"ondblclick="MostarFormulario()">Agregar</button>
+        
+    </div>
+
+</body>
+<script src="javaScript.js"></script>
+
+</html>

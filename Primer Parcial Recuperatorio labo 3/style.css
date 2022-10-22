@@ -1,0 +1,37 @@
+
+body{
+    background-color: rgb(57, 178, 178);
+}
+table
+{
+    background-color: aliceblue;
+    color:blue;
+}
+.formularioOculto
+{
+    display: none;
+    grid-template-columns: repeat(3, 200px);
+    
+}
+.buttonsito
+{
+    display: inline;
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+    visibility: hidden;
+}
+.ModificarYBorrarBtn{
+visibility: hidden;
+}
+.aereo
+{
+    display: grid;
+    visibility:hidden;  
+}
+#botonAlta
+{
+    margin-top: 20px;
+}
+
+
